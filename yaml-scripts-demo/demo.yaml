@@ -1,0 +1,21 @@
+agent:
+  cache: true # 启用缓存，可加速重复执行时的 AI 推理
+
+# Web 配置块：定义浏览器和目标页面的设置
+web:
+  url: ${BASE_URL} # 测试目标 URL：腾讯云子账号登录页面
+  viewportWidth: 2560 # 浏览器视口宽度（像素）
+  viewportHeight: 1440 # 浏览器视口高度（像素）
+  chromeArgs:
+    - "--no-sandbox"
+    - "--disable-setuid-sandbox"
+    - "--disable-dev-shm-usage"
+    - "--disable-gpu"
+    - "--single-process"
+    - "--no-zygote"
+# 任务列表：定义要执行的自动化测试任务
+tasks:
+  - name: 登录 # 任务名称：登录流程测试
+    flow: # 任务流程：按顺序执行的步骤列表
+      - sleep: 2000 # 等待 2000 毫秒（2秒），让页面充分加载
+      - aiTap: 其他登录方式下面的子用户登录 # AI 智能点击：点击登录按钮
