@@ -3,7 +3,7 @@ agent:
 
 # Web 配置块：定义浏览器和目标页面的设置
 web:
-  url: ${BASE_URL} # 测试目标 URL：腾讯云子账号登录页面
+  url: ${BASE_URL} 
   viewportWidth: 2560 # 浏览器视口宽度（像素）
   viewportHeight: 1440 # 浏览器视口高度（像素）
   chromeArgs:
